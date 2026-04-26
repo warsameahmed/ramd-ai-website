@@ -19,10 +19,11 @@
             --bg-card: #1A1F3A;
             --text-primary: #FFFFFF;
             --text-secondary: #B0B5C8;
-            --accent: #00D9FF;
+            --accent-cyan: #00D9FF;
+            --accent-purple: #8B5CF6;
             --accent-bright: #00F0FF;
             --border: #2D3450;
-            --success: #00D9FF;
+            --gradient-primary: linear-gradient(135deg, #00D9FF 0%, #8B5CF6 100%);
         }
 
         html {
@@ -45,8 +46,8 @@
             width: 100%;
             height: 100%;
             background:
-                radial-gradient(circle at 20% 50%, rgba(0, 217, 255, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(0, 217, 255, 0.03) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(0, 217, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
             pointer-events: none;
             z-index: -1;
         }
@@ -73,15 +74,14 @@
             align-items: center;
         }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: -1px;
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-family: 'Sohne', serif;
+        .logo-svg {
+            width: 140px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-svg:hover {
+            transform: scale(1.05);
         }
 
         nav ul {
@@ -101,7 +101,7 @@
         }
 
         nav a:hover {
-            color: var(--accent);
+            color: var(--accent-cyan);
         }
 
         nav a::after {
@@ -111,7 +111,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--accent);
+            background: var(--gradient-primary);
             transition: width 0.3s ease;
         }
 
@@ -133,7 +133,7 @@
             right: -20%;
             width: 800px;
             height: 800px;
-            background: radial-gradient(circle, rgba(0, 217, 255, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
             border-radius: 50%;
             animation: float 20s ease-in-out infinite;
         }
@@ -158,7 +158,7 @@
         }
 
         .gradient-text {
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-bright) 100%);
+            background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -176,7 +176,7 @@
 
         .cta-button {
             display: inline-block;
-            background: var(--accent);
+            background: var(--gradient-primary);
             color: var(--bg-dark);
             padding: 1rem 2.5rem;
             border-radius: 8px;
@@ -190,15 +190,14 @@
         }
 
         .cta-button:hover {
-            background: var(--accent-bright);
             transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.4);
         }
 
         .cta-secondary {
             background: transparent;
-            color: var(--accent);
-            border: 2px solid var(--accent);
+            color: var(--accent-cyan);
+            border: 2px solid var(--accent-cyan);
             margin-right: 0;
         }
 
@@ -218,6 +217,10 @@
             margin-bottom: 1rem;
             text-align: center;
             font-family: 'Sohne', serif;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .section-subtitle {
@@ -265,7 +268,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-bright));
+            background: var(--gradient-primary);
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.3s ease;
@@ -273,8 +276,8 @@
 
         .solution-card:hover {
             transform: translateY(-8px);
-            border-color: var(--accent);
-            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.15);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
         }
 
         .solution-card:hover::before {
@@ -285,8 +288,8 @@
             display: inline-flex;
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, rgba(0, 217, 255, 0.2), rgba(0, 217, 255, 0.05));
-            border: 2px solid var(--accent);
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.2), rgba(139, 92, 246, 0.1));
+            border: 2px solid var(--accent-cyan);
             border-radius: 12px;
             align-items: center;
             justify-content: center;
@@ -322,14 +325,17 @@
         }
 
         .feature-list li:hover {
-            color: var(--accent);
+            color: var(--accent-cyan);
         }
 
         .feature-list li::before {
             content: '→';
             position: absolute;
             left: 0;
-            color: var(--accent);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-weight: 700;
         }
 
@@ -349,15 +355,15 @@
         }
 
         .benefit-card:hover {
-            border-color: var(--accent);
-            box-shadow: 0 15px 35px rgba(0, 217, 255, 0.1);
+            border-color: var(--accent-purple);
+            box-shadow: 0 15px 35px rgba(139, 92, 246, 0.15);
             transform: translateY(-5px);
         }
 
         .benefit-number {
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, var(--accent), var(--accent-bright));
+            background: var(--gradient-primary);
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -396,8 +402,8 @@
         }
 
         .case-study-card:hover {
-            border-color: var(--accent);
-            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.15);
+            border-color: var(--accent-purple);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15);
             transform: translateY(-5px);
         }
 
@@ -410,19 +416,22 @@
 
         .case-study-company {
             font-size: 0.9rem;
-            color: var(--accent);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .case-study-result {
-            background: linear-gradient(135deg, rgba(0, 217, 255, 0.2), rgba(0, 217, 255, 0.05));
-            border: 1px solid var(--accent);
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.2), rgba(139, 92, 246, 0.1));
+            border: 1px solid var(--accent-cyan);
             padding: 0.6rem 1rem;
             border-radius: 6px;
             font-size: 0.85rem;
-            color: var(--accent);
+            color: var(--accent-cyan);
             font-weight: 600;
         }
 
@@ -454,7 +463,10 @@
         .metric-value {
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--accent);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 0.3rem;
         }
 
@@ -480,7 +492,7 @@
         }
 
         .faq-item:hover {
-            border-color: var(--accent);
+            border-color: var(--accent-cyan);
         }
 
         .faq-question {
@@ -504,7 +516,10 @@
         }
 
         .faq-toggle {
-            color: var(--accent);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-size: 1.5rem;
             transition: transform 0.3s ease;
             margin-left: 1rem;
@@ -532,7 +547,7 @@
         }
 
         .contact-section {
-            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(0, 217, 255, 0.05));
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(139, 92, 246, 0.08));
             border: 1px solid var(--border);
             border-radius: 16px;
             padding: 4rem 2rem;
@@ -548,7 +563,7 @@
             right: -10%;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(0, 217, 255, 0.1), transparent);
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15), transparent);
             border-radius: 50%;
             pointer-events: none;
         }
@@ -572,7 +587,7 @@
 
         .contact-btn {
             display: inline-block;
-            background: var(--accent);
+            background: var(--gradient-primary);
             color: var(--bg-dark);
             padding: 1.2rem 3rem;
             border-radius: 8px;
@@ -585,9 +600,8 @@
         }
 
         .contact-btn:hover {
-            background: var(--accent-bright);
             transform: translateY(-3px);
-            box-shadow: 0 25px 50px rgba(0, 217, 255, 0.4);
+            box-shadow: 0 25px 50px rgba(139, 92, 246, 0.4);
         }
 
         footer {
@@ -595,6 +609,12 @@
             border-top: 1px solid var(--border);
             padding: 4rem 0 2rem;
             margin-top: 4rem;
+        }
+
+        .footer-logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 2rem;
         }
 
         .footer-grid {
@@ -605,7 +625,10 @@
         }
 
         .footer-section h4 {
-            color: var(--accent);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 1.5rem;
             font-size: 0.95rem;
             font-weight: 700;
@@ -627,7 +650,7 @@
         }
 
         .footer-section a:hover {
-            color: var(--accent);
+            color: var(--accent-cyan);
         }
 
         .footer-bottom {
@@ -687,13 +710,54 @@
             .faq-question h3 {
                 font-size: 1rem;
             }
+
+            .logo-svg {
+                width: 110px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <nav class="container">
-            <div class="logo">RAMD</div>
+            <svg class="logo-svg" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#00D9FF;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="circuitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#00D9FF;stop-opacity:0.6" />
+                        <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:0.6" />
+                    </linearGradient>
+                </defs>
+
+                <!-- Main Text -->
+                <text x="10" y="35" font-family="Sohne, serif" font-size="36" font-weight="700" fill="url(#logoGradient)" letter-spacing="-1">RAMD</text>
+
+                <!-- Circuit Elements - R -->
+                <circle cx="52" cy="18" r="1.5" fill="url(#circuitGradient)"/>
+                <circle cx="62" cy="24" r="1.5" fill="url(#circuitGradient)"/>
+                <line x1="52" y1="18" x2="62" y2="24" stroke="url(#circuitGradient)" stroke-width="0.8" opacity="0.5"/>
+
+                <!-- Circuit Elements - A -->
+                <circle cx="80" cy="22" r="1.5" fill="url(#circuitGradient)"/>
+                <circle cx="90" cy="28" r="1.5" fill="url(#circuitGradient)"/>
+                <line x1="80" y1="22" x2="90" y2="28" stroke="url(#circuitGradient)" stroke-width="0.8" opacity="0.5"/>
+
+                <!-- Circuit Elements - M -->
+                <circle cx="108" cy="20" r="1.5" fill="url(#circuitGradient)"/>
+                <circle cx="118" cy="26" r="1.5" fill="url(#circuitGradient)"/>
+                <line x1="108" y1="20" x2="118" y2="26" stroke="url(#circuitGradient)" stroke-width="0.8" opacity="0.5"/>
+
+                <!-- Circuit Elements - D -->
+                <circle cx="136" cy="19" r="1.5" fill="url(#circuitGradient)"/>
+                <circle cx="146" cy="25" r="1.5" fill="url(#circuitGradient)"/>
+                <line x1="136" y1="19" x2="146" y2="25" stroke="url(#circuitGradient)" stroke-width="0.8" opacity="0.5"/>
+
+                <!-- Subtitle -->
+                <text x="10" y="55" font-family="Inter, sans-serif" font-size="10" fill="#B0B5C8" letter-spacing="1">ARTIFICIAL INTELLIGENCE</text>
+            </svg>
             <ul>
                 <li><a href="#solutions">Solutions</a></li>
                 <li><a href="#why">Why RAMD</a></li>
@@ -987,6 +1051,32 @@
 
     <footer>
         <div class="container">
+            <svg class="footer-logo" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="footerLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#00D9FF;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="footerCircuitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#00D9FF;stop-opacity:0.6" />
+                        <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:0.6" />
+                    </linearGradient>
+                </defs>
+                <text x="10" y="35" font-family="Sohne, serif" font-size="36" font-weight="700" fill="url(#footerLogoGradient)" letter-spacing="-1">RAMD</text>
+                <circle cx="52" cy="18" r="1.5" fill="url(#footerCircuitGradient)"/>
+                <circle cx="62" cy="24" r="1.5" fill="url(#footerCircuitGradient)"/>
+                <line x1="52" y1="18" x2="62" y2="24" stroke="url(#footerCircuitGradient)" stroke-width="0.8" opacity="0.5"/>
+                <circle cx="80" cy="22" r="1.5" fill="url(#footerCircuitGradient)"/>
+                <circle cx="90" cy="28" r="1.5" fill="url(#footerCircuitGradient)"/>
+                <line x1="80" y1="22" x2="90" y2="28" stroke="url(#footerCircuitGradient)" stroke-width="0.8" opacity="0.5"/>
+                <circle cx="108" cy="20" r="1.5" fill="url(#footerCircuitGradient)"/>
+                <circle cx="118" cy="26" r="1.5" fill="url(#footerCircuitGradient)"/>
+                <line x1="108" y1="20" x2="118" y2="26" stroke="url(#footerCircuitGradient)" stroke-width="0.8" opacity="0.5"/>
+                <circle cx="136" cy="19" r="1.5" fill="url(#footerCircuitGradient)"/>
+                <circle cx="146" cy="25" r="1.5" fill="url(#footerCircuitGradient)"/>
+                <line x1="136" y1="19" x2="146" y2="25" stroke="url(#footerCircuitGradient)" stroke-width="0.8" opacity="0.5"/>
+                <text x="10" y="55" font-family="Inter, sans-serif" font-size="10" fill="#B0B5C8" letter-spacing="1">ARTIFICIAL INTELLIGENCE</text>
+            </svg>
             <div class="footer-grid">
                 <div class="footer-section">
                     <h4>Products</h4>
@@ -1035,7 +1125,6 @@
             document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(button => {
             button.addEventListener('click', () => {
                 const faqItem = button.parentElement;
@@ -1051,7 +1140,6 @@
             });
         });
 
-        // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
