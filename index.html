@@ -74,14 +74,19 @@
             align-items: center;
         }
 
-        .logo-svg {
-            width: 140px;
-            height: auto;
+        .logo-img {
+            height: 50px;
+            width: auto;
             transition: transform 0.3s ease;
         }
 
-        .logo-svg:hover {
+        .logo-img:hover {
             transform: scale(1.05);
+        }
+
+        .footer-logo-img {
+            height: 40px;
+            margin-bottom: 2rem;
         }
 
         nav ul {
@@ -711,8 +716,12 @@
                 font-size: 1rem;
             }
 
-            .logo-svg {
-                width: 110px;
+            .logo-img {
+                height: 40px;
+            }
+
+            .footer-logo-img {
+                height: 35px;
             }
         }
     </style>
@@ -720,44 +729,7 @@
 <body>
     <header>
         <nav class="container">
-            <svg class="logo-svg" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#00D9FF;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
-                    </linearGradient>
-                    <linearGradient id="circuitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#00D9FF;stop-opacity:0.6" />
-                        <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:0.6" />
-                    </linearGradient>
-                </defs>
-
-                <!-- Main Text -->
-                <text x="10" y="35" font-family="Sohne, serif" font-size="36" font-weight="700" fill="url(#logoGradient)" letter-spacing="-1">RAMD</text>
-
-                <!-- Circuit Elements - R -->
-                <circle cx="52" cy="18" r="1.5" fill="url(#circuitGradient)"/>
-                <circle cx="62" cy="24" r="1.5" fill="url(#circuitGradient)"/>
-                <line x1="52" y1="18" x2="62" y2="24" stroke="url(#circuitGradient)" stroke-width="0.8" opacity="0.5"/>
-
-                <!-- Circuit Elements - A -->
-                <circle cx="80" cy="22" r="1.5" fill="url(#circuitGradient)"/>
-                <circle cx="90" cy="28" r="1.5" fill="url(#circuitGradient)"/>
-                <line x1="80" y1="22" x2="90" y2="28" stroke="url(#circuitGradient)" stroke-width="0.8" opacity="0.5"/>
-
-                <!-- Circuit Elements - M -->
-                <circle cx="108" cy="20" r="1.5" fill="url(#circuitGradient)"/>
-                <circle cx="118" cy="26" r="1.5" fill="url(#circuitGradient)"/>
-                <line x1="108" y1="20" x2="118" y2="26" stroke="url(#circuitGradient)" stroke-width="0.8" opacity="0.5"/>
-
-                <!-- Circuit Elements - D -->
-                <circle cx="136" cy="19" r="1.5" fill="url(#circuitGradient)"/>
-                <circle cx="146" cy="25" r="1.5" fill="url(#circuitGradient)"/>
-                <line x1="136" y1="19" x2="146" y2="25" stroke="url(#circuitGradient)" stroke-width="0.8" opacity="0.5"/>
-
-                <!-- Subtitle -->
-                <text x="10" y="55" font-family="Inter, sans-serif" font-size="10" fill="#B0B5C8" letter-spacing="1">ARTIFICIAL INTELLIGENCE</text>
-            </svg>
+            <img src="logo.png" alt="RAMD.ai" class="logo-img">
             <ul>
                 <li><a href="#solutions">Solutions</a></li>
                 <li><a href="#why">Why RAMD</a></li>
@@ -1051,32 +1023,7 @@
 
     <footer>
         <div class="container">
-            <svg class="footer-logo" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="footerLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#00D9FF;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
-                    </linearGradient>
-                    <linearGradient id="footerCircuitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#00D9FF;stop-opacity:0.6" />
-                        <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:0.6" />
-                    </linearGradient>
-                </defs>
-                <text x="10" y="35" font-family="Sohne, serif" font-size="36" font-weight="700" fill="url(#footerLogoGradient)" letter-spacing="-1">RAMD</text>
-                <circle cx="52" cy="18" r="1.5" fill="url(#footerCircuitGradient)"/>
-                <circle cx="62" cy="24" r="1.5" fill="url(#footerCircuitGradient)"/>
-                <line x1="52" y1="18" x2="62" y2="24" stroke="url(#footerCircuitGradient)" stroke-width="0.8" opacity="0.5"/>
-                <circle cx="80" cy="22" r="1.5" fill="url(#footerCircuitGradient)"/>
-                <circle cx="90" cy="28" r="1.5" fill="url(#footerCircuitGradient)"/>
-                <line x1="80" y1="22" x2="90" y2="28" stroke="url(#footerCircuitGradient)" stroke-width="0.8" opacity="0.5"/>
-                <circle cx="108" cy="20" r="1.5" fill="url(#footerCircuitGradient)"/>
-                <circle cx="118" cy="26" r="1.5" fill="url(#footerCircuitGradient)"/>
-                <line x1="108" y1="20" x2="118" y2="26" stroke="url(#footerCircuitGradient)" stroke-width="0.8" opacity="0.5"/>
-                <circle cx="136" cy="19" r="1.5" fill="url(#footerCircuitGradient)"/>
-                <circle cx="146" cy="25" r="1.5" fill="url(#footerCircuitGradient)"/>
-                <line x1="136" y1="19" x2="146" y2="25" stroke="url(#footerCircuitGradient)" stroke-width="0.8" opacity="0.5"/>
-                <text x="10" y="55" font-family="Inter, sans-serif" font-size="10" fill="#B0B5C8" letter-spacing="1">ARTIFICIAL INTELLIGENCE</text>
-            </svg>
+            <img src="logo.png" alt="RAMD.ai" class="logo-img footer-logo-img">
             <div class="footer-grid">
                 <div class="footer-section">
                     <h4>Products</h4>
