@@ -1,0 +1,29 @@
+{
+  "name": "ramd-ai-website",
+  "version": "1.0.0",
+  "description": "Enterprise AI Solutions Website for RAMD.ai - Digital Twin, Supply Chain Automation, Secure Communications",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "serve": "http-server -p 8000",
+    "dev": "python3 -m http.server 8000 --directory ."
+  },
+  "keywords": [
+    "AI",
+    "digital-twin",
+    "supply-chain",
+    "enterprise",
+    "automation",
+    "quantum-security",
+    "middle-east"
+  ],
+  "author": "RAMD.ai",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ramd-ai/website.git"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

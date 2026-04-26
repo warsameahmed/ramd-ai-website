@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RAMD.ai - Enterprise AI Solutions for Digital Transformation. Supply Chain Automation, Digital Twin Enablement, Secure Communications, and Quantum-Resilient Platforms.">
+    <meta name="keywords" content="AI Solutions, Digital Twin, Supply Chain Automation, Enterprise Chatbots, Quantum Security">
+    <title>RAMD.ai - Enterprise AI Solutions</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Sohne:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0F4C75;
+            --secondary: #1B7BA6;
+            --accent: #FFB703;
+            --accent-light: #FFC107;
+            --dark: #0A1E28;
+            --light: #F5F7FA;
+            --text-dark: #1A1A1A;
+            --text-light: #6B7280;
+            --border: #E5E7EB;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Sohne', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Geometric Pattern Background */
+        .pattern-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.03;
+            background-image:
+                repeating-linear-gradient(45deg, transparent, transparent 35px, var(--primary) 35px, var(--primary) 70px),
+                repeating-linear-gradient(-45deg, transparent, transparent 35px, var(--primary) 35px, var(--primary) 70px);
+            pointer-events: none;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(15, 76, 117, 0.15);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-accent {
+            color: var(--accent);
+            font-size: 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent);
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 183, 3, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent);
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 183, 3, 0.3);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            margin-left: 1rem;
+        }
+
+        .cta-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 5rem 0;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            border-radius: 2px;
+        }
+
+        /* Solutions Grid */
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .solution-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--accent);
+            position: relative;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(15, 76, 117, 0.15);
+            border-left-color: var(--secondary);
+        }
+
+        .solution-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .solution-icon {
+            display: inline-flex;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 8px;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .solution-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* Alternate Sections */
+        .alt-bg {
+            background: linear-gradient(135deg, var(--light) 0%, rgba(15, 76, 117, 0.02) 100%);
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .why-choose-content h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .benefit-item {
+            margin-bottom: 2rem;
+            padding-left: 3rem;
+            position: relative;
+        }
+
+        .benefit-icon {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .benefit-item h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: white;
+        }
+
+        .contact-section h2::after {
+            background: linear-gradient(90deg, var(--accent), rgba(255, 183, 3, 0.5));
+        }
+
+        .contact-content {
+            margin-top: 2rem;
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .contact-btn:hover {
+            background: rgba(255, 183, 3, 0.9);
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 183, 3, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            justify-items: start;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .cta-secondary {
+                display: block;
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+
+            .why-choose {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .footer-sections {
+                grid-template-columns: 1fr;
+                justify-items: center;
+                text-align: center;
+            }
+
+            .footer-section a {
+                display: inline;
+                margin-right: 1rem;
+            }
+        }
+
+        /* Utility Classes */
+        .text-accent {
+            color: var(--accent);
+        }
+
+        .mt-3 {
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="pattern-bg"></div>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <span class="logo-accent">◆</span> RAMD
+            </div>
+            <ul>
+                <li><a href="#solutions">Solutions</a></li>
+                <li><a href="#why-choose">Why RAMD</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Enterprise AI Solutions for Digital Transformation</h1>
+                <p class="tagline">Empowering businesses across the Middle East with intelligent automation, secure communications, and real-time insights</p>
+                <button class="cta-button" onclick="scrollToContact()">Get Started</button>
+                <a href="#solutions" class="cta-button cta-secondary">Explore Solutions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="alt-bg">
+        <div class="container">
+            <h2>Our Solutions</h2>
+            <div class="solutions-grid">
+                <!-- Digital Twin -->
+                <div class="solution-card">
+                    <h3>
+                        <div class="solution-icon">🌐</div>
+                        Digital Twin Enablement
+                    </h3>
+                    <p>Real-time city and infrastructure management with AI-powered simulations and predictive analytics.</p>
+                    <ul class="feature-list">
+                        <li>Emergency coordination & response</li>
+                        <li>What-if scenario simulation</li>
+                        <li>Real-time resource allocation</li>
+                        <li>AI-driven decision support</li>
+                    </ul>
+                </div>
+
+                <!-- Supply Chain -->
+                <div class="solution-card">
+                    <h3>
+                        <div class="solution-icon">📦</div>
+                        Supply Chain AI Automation
+                    </h3>
+                    <p>Intelligent procurement and inventory management with natural language conversation interface.</p>
+                    <ul class="feature-list">
+                        <li>Conversational data intelligence</li>
+                        <li>Automated supplier management</li>
+                        <li>Predictive demand forecasting</li>
+                        <li>Invoice reconciliation & optimization</li>
+                    </ul>
+                </div>
+
+                <!-- Enterprise Chatbots -->
+                <div class="solution-card">
+                    <h3>
+                        <div class="solution-icon">💬</div>
+                        Secure Enterprise Chatbots
+                    </h3>
+                    <p>LLM-powered conversational AI designed for enterprise-grade security and reliability.</p>
+                    <ul class="feature-list">
+                        <li>Custom LLM integration</li>
+                        <li>Enterprise data safety</li>
+                        <li>Multi-language support</li>
+                        <li>On-premises deployment</li>
+                    </ul>
+                </div>
+
+                <!-- Data Platform -->
+                <div class="solution-card">
+                    <h3>
+                        <div class="solution-icon">🔒</div>
+                        Secure Data Platform
+                    </h3>
+                    <p>Modern, on-premises data infrastructure with real-time ingestion and no ETL complexity.</p>
+                    <ul class="feature-list">
+                        <li>Real-time data pipelines</li>
+                        <li>Military-grade encryption</li>
+                        <li>Enterprise-ready architecture</li>
+                        <li>Multi-source integration</li>
+                    </ul>
+                </div>
+
+                <!-- Quantum Security -->
+                <div class="solution-card">
+                    <h3>
+                        <div class="solution-icon">🔐</div>
+                        Quantum-Resilient Communication
+                    </h3>
+                    <p>Post-quantum encrypted communication platform for classified and sensitive workflows.</p>
+                    <ul class="feature-list">
+                        <li>Post-quantum cryptography (PQC)</li>
+                        <li>End-to-end encryption</li>
+                        <li>Zero-trust identity verification</li>
+                        <li>Immutable audit trails</li>
+                    </ul>
+                </div>
+
+                <!-- Custom Solutions -->
+                <div class="solution-card">
+                    <h3>
+                        <div class="solution-icon">⚙️</div>
+                        Custom AI Solutions
+                    </h3>
+                    <p>Tailored AI implementations designed specifically for your industry and unique business needs.</p>
+                    <ul class="feature-list">
+                        <li>Industry-specific customization</li>
+                        <li>Rapid deployment</li>
+                        <li>Ongoing optimization</li>
+                        <li>Dedicated support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose RAMD -->
+    <section id="why-choose">
+        <div class="container">
+            <h2>Why Choose RAMD</h2>
+            <div class="why-choose">
+                <div class="why-choose-content">
+                    <h3>Built for Enterprise Excellence</h3>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">✓</div>
+                        <h4>Security First</h4>
+                        <p>Military-grade encryption, quantum-resistant security, and post-quantum cryptography ensure your data is protected against current and future threats.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">✓</div>
+                        <h4>Proven Expertise</h4>
+                        <p>Serving enterprise clients across multiple industries with solutions trusted by leading organizations in the Middle East and globally.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">✓</div>
+                        <h4>Intelligent Automation</h4>
+                        <p>AI-powered solutions that reduce manual work, accelerate decision-making, and unlock new business opportunities through data-driven insights.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">✓</div>
+                        <h4>On-Premises Deployment</h4>
+                        <p>Keep your critical infrastructure and data within your control. Our solutions are designed for secure, on-premises deployment with minimal cloud dependency.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">✓</div>
+                        <h4>24/7 Enterprise Support</h4>
+                        <p>Dedicated support teams ensuring your solutions run smoothly with minimal downtime and quick resolution of any challenges.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Ready to Transform Your Business?</h2>
+            <div class="contact-content">
+                <p class="contact-info">Get in touch with our team to discuss how RAMD can drive innovation and efficiency in your organization.</p>
+                <button class="contact-btn" onclick="sendEmail()">Contact Us</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-sections">
+                    <div class="footer-section">
+                        <h4>PRODUCTS</h4>
+                        <ul>
+                            <li><a href="#solutions">Digital Twin</a></li>
+                            <li><a href="#solutions">Supply Chain AI</a></li>
+                            <li><a href="#solutions">Enterprise Chatbots</a></li>
+                            <li><a href="#solutions">Data Platform</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>COMPANY</h4>
+                        <ul>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#solutions">Solutions</a></li>
+                            <li><a href="#careers">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>SUPPORT</h4>
+                        <ul>
+                            <li><a href="mailto:info@ramdfz.com">Email Support</a></li>
+                            <li><a href="#documentation">Documentation</a></li>
+                            <li><a href="#security">Security</a></li>
+                            <li><a href="#privacy">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 RAMD.ai. All rights reserved. | Empowering Enterprise AI Solutions</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function sendEmail() {
+            const email = 'info@ramdfz.com';
+            const subject = 'RAMD.ai - Solution Inquiry';
+            const body = 'Hello RAMD Team,%0D%0A%0D%0AI am interested in learning more about your AI solutions.%0D%0A%0D%0APlease contact me at your earliest convenience.%0D%0A%0D%0AThank you!';
+
+            window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+        }
+
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Add scroll animation to cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.solution-card, .benefit-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

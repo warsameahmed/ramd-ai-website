@@ -1,0 +1,83 @@
+{
+  "site": {
+    "title": "RAMD.ai - Enterprise AI Solutions",
+    "description": "Enterprise AI Solutions for Digital Transformation. Supply Chain Automation, Digital Twin Enablement, Secure Communications, and Quantum-Resilient Platforms.",
+    "url": "https://ramd.ai",
+    "contactEmail": "info@ramdfz.com",
+    "socialMedia": {
+      "linkedin": "",
+      "twitter": "",
+      "facebook": "",
+      "instagram": ""
+    }
+  },
+  "brand": {
+    "name": "RAMD",
+    "tagline": "Enterprise AI Solutions for Digital Transformation",
+    "colors": {
+      "primary": "#0F4C75",
+      "secondary": "#1B7BA6",
+      "accent": "#FFB703",
+      "dark": "#0A1E28",
+      "light": "#F5F7FA"
+    },
+    "fonts": {
+      "primary": "Sohne, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+      "mono": "Space Mono, monospace"
+    }
+  },
+  "seo": {
+    "keywords": ["AI solutions", "digital twin", "supply chain automation", "enterprise chatbots", "quantum security", "Middle East"],
+    "googleAnalyticsId": "",
+    "siteName": "RAMD.ai"
+  },
+  "sections": {
+    "hero": {
+      "title": "Enterprise AI Solutions for Digital Transformation",
+      "subtitle": "Empowering businesses across the Middle East with intelligent automation, secure communications, and real-time insights"
+    },
+    "solutions": [
+      {
+        "id": "digital-twin",
+        "icon": "🌐",
+        "title": "Digital Twin Enablement",
+        "description": "Real-time city and infrastructure management with AI-powered simulations and predictive analytics."
+      },
+      {
+        "id": "supply-chain",
+        "icon": "📦",
+        "title": "Supply Chain AI Automation",
+        "description": "Intelligent procurement and inventory management with natural language conversation interface."
+      },
+      {
+        "id": "chatbots",
+        "icon": "💬",
+        "title": "Secure Enterprise Chatbots",
+        "description": "LLM-powered conversational AI designed for enterprise-grade security and reliability."
+      },
+      {
+        "id": "data-platform",
+        "icon": "🔒",
+        "title": "Secure Data Platform",
+        "description": "Modern, on-premises data infrastructure with real-time ingestion and no ETL complexity."
+      },
+      {
+        "id": "quantum-security",
+        "icon": "🔐",
+        "title": "Quantum-Resilient Communication",
+        "description": "Post-quantum encrypted communication platform for classified and sensitive workflows."
+      },
+      {
+        "id": "custom-solutions",
+        "icon": "⚙️",
+        "title": "Custom AI Solutions",
+        "description": "Tailored AI implementations designed specifically for your industry and unique business needs."
+      }
+    ]
+  },
+  "deployment": {
+    "platforms": ["GitHub Pages", "Netlify", "Vercel", "Traditional Web Host"],
+    "buildCommand": "none",
+    "publishDirectory": "."
+  }
+}
