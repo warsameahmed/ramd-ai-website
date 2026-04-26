@@ -37,7 +37,6 @@
             overflow-x: hidden;
         }
 
-        /* Animated Background */
         body::before {
             content: '';
             position: fixed;
@@ -58,7 +57,6 @@
             padding: 0 2rem;
         }
 
-        /* Header */
         header {
             padding: 1.5rem 0;
             border-bottom: 1px solid var(--border);
@@ -121,7 +119,6 @@
             width: 100%;
         }
 
-        /* Hero Section */
         .hero {
             padding: 8rem 0 6rem;
             text-align: center;
@@ -210,7 +207,6 @@
             box-shadow: 0 20px 40px rgba(0, 217, 255, 0.2);
         }
 
-        /* Sections */
         section {
             padding: 6rem 0;
             position: relative;
@@ -234,7 +230,17 @@
             margin-right: auto;
         }
 
-        /* Solutions Grid */
+        .section-intro {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
         .solutions-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -327,7 +333,6 @@
             font-weight: 700;
         }
 
-        /* Why Choose Section */
         .why-choose-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -375,7 +380,157 @@
             line-height: 1.7;
         }
 
-        /* Contact Section */
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .case-study-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .case-study-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .case-study-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1.5rem;
+        }
+
+        .case-study-company {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .case-study-result {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.2), rgba(0, 217, 255, 0.05));
+            border: 1px solid var(--accent);
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .case-study-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .case-study-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .case-study-metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.3rem;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 4rem auto 0;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--accent);
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .faq-item:hover .faq-question {
+            background: rgba(0, 217, 255, 0.05);
+        }
+
+        .faq-question h3 {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin: 0;
+            flex: 1;
+        }
+
+        .faq-toggle {
+            color: var(--accent);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            margin-left: 1rem;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 0 2rem 1.5rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
         .contact-section {
             background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(0, 217, 255, 0.05));
             border: 1px solid var(--border);
@@ -435,7 +590,6 @@
             box-shadow: 0 25px 50px rgba(0, 217, 255, 0.4);
         }
 
-        /* Footer */
         footer {
             background: var(--bg-darker);
             border-top: 1px solid var(--border);
@@ -484,7 +638,6 @@
             font-size: 0.85rem;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.5rem;
@@ -510,7 +663,8 @@
             }
 
             .solutions-grid,
-            .why-choose-grid {
+            .why-choose-grid,
+            .case-study-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -525,44 +679,52 @@
             .contact-section {
                 padding: 2.5rem 1.5rem;
             }
+
+            .case-study-metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-question h3 {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <nav class="container">
             <div class="logo">RAMD</div>
             <ul>
                 <li><a href="#solutions">Solutions</a></li>
                 <li><a href="#why">Why RAMD</a></li>
+                <li><a href="#case-studies">Case Studies</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
                 <h1>Enterprise AI <span class="gradient-text">Solutions</span> for Digital Transformation</h1>
-                <p class="tagline">Intelligent automation, quantum-secure communications, and real-time insights for enterprise leaders</p>
+                <p class="tagline">Intelligent automation, quantum-secure communications, and real-time insights for enterprise leaders across the Middle East and globally</p>
+                <p class="section-intro">RAMD.ai delivers enterprise-grade AI solutions that combine cutting-edge technology with military-grade security. We empower organizations to transform their operations through intelligent automation, real-time data analytics, and quantum-resilient communications.</p>
                 <button class="cta-button" onclick="scrollToContact()">Get Started</button>
                 <a href="#solutions" class="cta-button cta-secondary">Explore Solutions</a>
             </div>
         </div>
     </section>
 
-    <!-- Solutions -->
     <section id="solutions">
         <div class="container">
             <h2>Our Solutions</h2>
-            <p class="section-subtitle">Enterprise-grade AI solutions designed for security, scale, and sophistication</p>
+            <p class="section-intro">RAMD provides comprehensive AI solutions designed for enterprise security, scalability, and sophistication. Each solution is built with military-grade encryption and designed to operate securely on-premises, giving you complete control of your critical data and operations.</p>
             <div class="solutions-grid">
                 <div class="solution-card">
                     <div class="solution-icon">🌐</div>
                     <h3>Digital Twin Enablement</h3>
-                    <p>Real-time city and infrastructure management with AI-powered simulations and predictive analytics.</p>
+                    <p>Transform city and infrastructure management with real-time AI-powered digital twins. Create virtual simulations of your physical assets and environments to optimize operations, predict issues before they occur, and test scenarios before implementation.</p>
                     <ul class="feature-list">
                         <li>Emergency coordination & response</li>
                         <li>What-if scenario simulation</li>
@@ -574,7 +736,7 @@
                 <div class="solution-card">
                     <div class="solution-icon">📦</div>
                     <h3>Supply Chain AI Automation</h3>
-                    <p>Intelligent procurement and inventory management with natural language conversation interface.</p>
+                    <p>Revolutionize procurement and inventory management with conversational AI. Ask questions in natural language and get instant insights. Automate supplier management, predict demand 2-4 weeks ahead, and optimize procurement costs.</p>
                     <ul class="feature-list">
                         <li>Conversational data intelligence</li>
                         <li>Automated supplier management</li>
@@ -586,7 +748,7 @@
                 <div class="solution-card">
                     <div class="solution-icon">💬</div>
                     <h3>Secure Enterprise Chatbots</h3>
-                    <p>LLM-powered conversational AI designed for enterprise-grade security and reliability.</p>
+                    <p>Deploy LLM-powered conversational AI with enterprise-grade security. Our secure chatbots can be fully customized and deployed on-premises, ensuring your sensitive data never leaves your infrastructure while delivering intelligent conversational experiences.</p>
                     <ul class="feature-list">
                         <li>Custom LLM integration</li>
                         <li>Enterprise data safety</li>
@@ -598,7 +760,7 @@
                 <div class="solution-card">
                     <div class="solution-icon">🔒</div>
                     <h3>Secure Data Platform</h3>
-                    <p>Modern, on-premises data infrastructure with real-time ingestion and no ETL complexity.</p>
+                    <p>Modern data infrastructure designed for enterprise security. Real-time data pipelines, no ETL complexity, and military-grade encryption. Process data from multiple sources instantly while maintaining complete control and compliance.</p>
                     <ul class="feature-list">
                         <li>Real-time data pipelines</li>
                         <li>Military-grade encryption</li>
@@ -610,7 +772,7 @@
                 <div class="solution-card">
                     <div class="solution-icon">🔐</div>
                     <h3>Quantum-Resilient Communication</h3>
-                    <p>Post-quantum encrypted communication platform for classified and sensitive workflows.</p>
+                    <p>Future-proof your communication infrastructure with post-quantum cryptography. End-to-end encrypted chat, voice, video, and file sharing for classified workflows. Designed for organizations requiring the highest levels of security and data protection.</p>
                     <ul class="feature-list">
                         <li>Post-quantum cryptography (PQC)</li>
                         <li>End-to-end encryption</li>
@@ -622,7 +784,7 @@
                 <div class="solution-card">
                     <div class="solution-icon">⚙️</div>
                     <h3>Custom AI Solutions</h3>
-                    <p>Tailored AI implementations designed specifically for your industry and business needs.</p>
+                    <p>Tailored AI implementations built specifically for your industry and unique business challenges. Our expert team works closely with your organization to design, deploy, and optimize solutions that deliver measurable business impact.</p>
                     <ul class="feature-list">
                         <li>Industry-specific customization</li>
                         <li>Rapid deployment</li>
@@ -634,65 +796,195 @@
         </div>
     </section>
 
-    <!-- Why Choose -->
     <section id="why">
         <div class="container">
             <h2>Why Choose RAMD</h2>
-            <p class="section-subtitle">Built for enterprise excellence and security-first operations</p>
+            <p class="section-intro">RAMD.ai stands apart through our unwavering commitment to security, enterprise excellence, and customer success. We understand the critical nature of enterprise operations and deliver solutions built for reliability, scalability, and trust.</p>
             <div class="why-choose-grid">
                 <div class="benefit-card">
                     <div class="benefit-number">01</div>
-                    <h4>Security First</h4>
-                    <p>Military-grade encryption and quantum-resistant cryptography protect your most sensitive data against current and future threats.</p>
+                    <h4>Security First Architecture</h4>
+                    <p>Military-grade encryption and quantum-resistant cryptography protect your most sensitive data against current and future threats. On-premises deployment ensures your data never leaves your control.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-number">02</div>
-                    <h4>Enterprise Grade</h4>
-                    <p>Proven expertise serving enterprise clients across multiple industries with solutions trusted by leading organizations.</p>
+                    <h4>Enterprise Proven</h4>
+                    <p>Trusted by leading organizations across multiple industries. Our solutions are battle-tested in mission-critical environments with proven track records of reliability and performance at scale.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-number">03</div>
                     <h4>Intelligent Automation</h4>
-                    <p>AI-powered solutions that reduce manual work by up to 70%, accelerate decision-making, and unlock new opportunities.</p>
+                    <p>AI-powered solutions that reduce manual work, accelerate decision-making, and unlock new opportunities. Achieve significant ROI through process optimization and efficiency gains.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-number">04</div>
                     <h4>On-Premises Control</h4>
-                    <p>Keep your critical infrastructure and data within your control. Deploy securely with minimal cloud dependency.</p>
+                    <p>Keep your critical infrastructure and data within your control. Deploy securely with minimal cloud dependency, ensuring compliance with regional regulations and data residency requirements.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-number">05</div>
-                    <h4>24/7 Support</h4>
-                    <p>Dedicated enterprise support teams ensuring your solutions run smoothly with minimal downtime and rapid issue resolution.</p>
+                    <h4>24/7 Enterprise Support</h4>
+                    <p>Dedicated support teams ensuring your solutions run smoothly. Rapid incident response, proactive monitoring, and strategic guidance to maximize your investment and business impact.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-number">06</div>
-                    <h4>Real-Time Insights</h4>
-                    <p>Transform raw data into actionable intelligence with real-time analytics and predictive capabilities.</p>
+                    <h4>Real-Time Intelligence</h4>
+                    <p>Transform raw data into actionable intelligence instantly. Real-time analytics, predictive capabilities, and AI-driven insights enable faster, better-informed business decisions.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact -->
+    <section id="case-studies">
+        <div class="container">
+            <h2>Case Studies</h2>
+            <p class="section-intro">See how leading organizations have transformed their operations using RAMD.ai solutions. Our proven implementations deliver measurable results in efficiency, cost savings, and operational excellence.</p>
+            <div class="case-study-grid">
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <div class="case-study-company">Global Logistics Leader</div>
+                        <div class="case-study-result">+45% Efficiency</div>
+                    </div>
+                    <h3>Supply Chain Optimization</h3>
+                    <p class="case-study-description">A multinational logistics company implemented RAMD's Supply Chain AI Automation to optimize procurement across 50+ distribution centers. The intelligent platform reduced procurement time by 45% and decreased supplier costs by 22% through AI-driven negotiations and demand forecasting.</p>
+                    <div class="case-study-metrics">
+                        <div class="metric">
+                            <div class="metric-value">22%</div>
+                            <div class="metric-label">Cost Reduction</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">6 Months</div>
+                            <div class="metric-label">ROI Timeline</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <div class="case-study-company">Smart City Authority</div>
+                        <div class="case-study-result">+65% Response Time</div>
+                    </div>
+                    <h3>Digital Twin Emergency Response</h3>
+                    <p class="case-study-description">A major metropolitan authority deployed RAMD's Digital Twin Enablement platform for emergency coordination. Real-time simulations reduced emergency response time by 65% and improved resource allocation accuracy by 40%, potentially saving lives.</p>
+                    <div class="case-study-metrics">
+                        <div class="metric">
+                            <div class="metric-value">65%</div>
+                            <div class="metric-label">Faster Response</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">40%</div>
+                            <div class="metric-label">Better Allocation</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <div class="case-study-company">Enterprise Financial Corp</div>
+                        <div class="case-study-result">99.99% Security</div>
+                    </div>
+                    <h3>Quantum-Secure Communications</h3>
+                    <p class="case-study-description">A leading financial institution secured their communications infrastructure with RAMD's Quantum-Resilient Communication platform. Zero security breaches in 18 months of operation, full regulatory compliance, and zero data loss incidents across 5,000+ endpoints.</p>
+                    <div class="case-study-metrics">
+                        <div class="metric">
+                            <div class="metric-value">18 Mo</div>
+                            <div class="metric-label">Zero Breaches</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">5000+</div>
+                            <div class="metric-label">Endpoints Protected</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <p class="section-subtitle">Common questions about RAMD.ai solutions and enterprise deployments</p>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How does RAMD ensure data security and compliance?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">RAMD.ai employs military-grade encryption (AES-256), quantum-resistant cryptography (PQC), and post-quantum protocols. All solutions support on-premises deployment, ensuring your data never leaves your infrastructure. We comply with GDPR, CCPA, and regional data protection regulations. Every transaction is immutably logged with our Enigma Chain ledger technology for complete audit trails.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can RAMD solutions be deployed on-premises?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">Yes. All RAMD.ai solutions are designed for on-premises deployment. This gives you complete control over your infrastructure, data residency, and compliance requirements. We provide containerized deployments, comprehensive documentation, and dedicated deployment support to ensure smooth integration with your existing systems.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is the typical implementation timeline?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">Implementation timelines vary based on solution complexity and your infrastructure readiness. Typically: Supply Chain AI (4-8 weeks), Data Platform (6-12 weeks), Digital Twin (8-16 weeks), and Quantum Communications (4-6 weeks). We provide rapid deployment options and phased rollouts to minimize operational disruption.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How does RAMD's AI differ from generic AI solutions?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">RAMD.ai solutions are purpose-built for enterprise environments with security-first architecture. Our AI is optimized for: 1) On-premises execution without cloud dependency, 2) Real-time performance on large datasets, 3) Industry-specific customization, 4) Quantum-resistant security, and 5) Regulatory compliance across regions.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What kind of support does RAMD provide?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">RAMD provides 24/7 enterprise support with: dedicated account teams, proactive monitoring, rapid incident response (SLA-based), technical training, optimization consulting, and regular system updates. We also offer strategic guidance to help you maximize ROI and expand solution usage across your organization.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How is ROI measured with RAMD solutions?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">ROI typically comes from: cost reduction (22-40% for supply chain), efficiency gains (45-70% for operations), risk mitigation, and revenue acceleration. We work with your finance team to establish baseline metrics, track KPIs, and document improvements. Most clients see positive ROI within 6-12 months of deployment.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="contact">
         <div class="container">
             <div class="contact-section">
                 <h2>Ready to Transform Your Business?</h2>
                 <div class="contact-content">
-                    <p class="contact-info">Let our enterprise AI solutions drive innovation and efficiency across your organization</p>
+                    <p class="contact-info">Let our enterprise AI solutions drive innovation and efficiency across your organization. Get started with a consultation with our team.</p>
                     <button class="contact-btn" onclick="sendEmail()">Contact Us</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -703,6 +995,7 @@
                         <li><a href="#solutions">Supply Chain AI</a></li>
                         <li><a href="#solutions">Enterprise Chatbots</a></li>
                         <li><a href="#solutions">Data Platform</a></li>
+                        <li><a href="#solutions">Quantum Communications</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -710,8 +1003,8 @@
                     <ul>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#contact">Contact</a></li>
-                        <li><a href="#solutions">Solutions</a></li>
-                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#case-studies">Case Studies</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -742,6 +1035,22 @@
             document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
         }
 
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
         // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
@@ -757,7 +1066,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.solution-card, .benefit-card').forEach(el => {
+        document.querySelectorAll('.solution-card, .benefit-card, .case-study-card, .faq-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
